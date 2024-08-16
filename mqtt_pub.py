@@ -8,8 +8,8 @@ from mqtt.mqtt_client import MqttClient
 
 
 class MqttPub(MqttClient):
-    def __init__(self, monitor, mqtt_server, mqtt_port, topic, qos, timeout=5):
-        super().__init__(monitor, mqtt_server, mqtt_port, topic)
+    def __init__(self, monitor, mqtt_server, mqtt_port , topic, qos, timeout=5, mqtt_username=None, mqtt_password=None):
+        super().__init__(monitor, mqtt_server, mqtt_port, topic, mqtt_username, mqtt_password)
         self.client_uuid = uuid.uuid4()
         self.qos = qos
         self.timeout = timeout
